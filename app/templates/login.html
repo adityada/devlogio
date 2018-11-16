@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="" method="post" novalidate>
+            {{ form.csrf_token }}
+        <h1>Sign In</h1>
+        <p>
+            {{ form.username.label }}: {{ form.username }}
+        </p>
+        <p>
+            {{ form.password.label }}: {{ form.password }}
+        </p>
+        <p>{{ form.remember_me }} {{form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
