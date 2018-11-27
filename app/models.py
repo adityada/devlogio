@@ -28,7 +28,7 @@ class Game(db.Model):
     __tablename__ = "Game"
     id = db.Column(db.Integer, primary_key=True)
     game_name = db.Column(db.String(64))
-    user_id = db.Column(db.Integer, db.ForeignKey('User.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('User.id'))
     posts = db.relationship('Post', backref='game', lazy=True)
 
     def __repr__(self):

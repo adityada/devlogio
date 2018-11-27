@@ -4,10 +4,12 @@
         <div style="text-align: center">
                 <form action="{{ url_for('index') }}" method="post">
                     {{ form.hidden_tag() }}
-                    <p>{{ form.game }}</p>
-                    <p>{{ form.title.label() }} {{ form.title(size=32) }}</p>
-                    <p>{{ form.log.label() }} {{ form.log(size=64) }}</p>
-                    <p>{{ form.submit() }}</p>
+                    {% if form %}
+                        <p>{{ form.game }}</p>
+                        <p>{{ form.title.label() }} {{ form.title(size=32) }}</p>
+                        <p>{{ form.log.label() }} {{ form.log(size=64) }}</p>
+                        <p>{{ form.submit() }}</p>
+                    {% endif %}
                 </form>
                 <hr>        
         </div>
